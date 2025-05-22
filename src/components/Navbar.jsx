@@ -6,8 +6,13 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate('/');
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      navigate('/');
+    } catch (error) {
+      console.error('Error signing out:', error.message);
+    }
   };
 
   return (
@@ -15,11 +20,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0">
-            <img 
-              src="https://funnelmates.com/wp-content/uploads/2025/05/PuzzleVersedLogo-1.png" 
-              alt="PuzzleVersed" 
-              className="h-12"
-            />
+            <Link to="/dashboard">
+              <img 
+                src="https://funnelmates.com/wp-content/uploads/2025/05/PuzzleVersedLogo-1.png" 
+                alt="PuzzleVersed" 
+                className="h-12"
+              />
+            </Link>
           </div>
           
           <div className="flex items-center space-x-4">

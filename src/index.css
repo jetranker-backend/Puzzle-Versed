@@ -41,6 +41,10 @@ input, select, textarea {
   @apply transition-all duration-200;
 }
 
+input::placeholder {
+  @apply text-gray-400;
+}
+
 button {
   @apply transition-all duration-200;
 }
@@ -60,4 +64,9 @@ button {
 
 .modal-exit-active {
   @apply opacity-0 scale-95 transition-all duration-200;
+}
+
+/* Font utilities */
+.font-tech {
+  @apply font-['Space_Grotesk'];
 }
