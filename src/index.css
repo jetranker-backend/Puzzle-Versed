@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#2a3036] text-white font-['Space_Grotesk'];
+}
+
+.neon-card {
+  @apply bg-[#2a3036]/50 rounded-xl p-6 
+         border border-[#3aabb8]/20 hover:border-[#3aabb8]/40 
+         transition-all duration-300 hover:shadow-lg;
+}
+
+.neon-button {
+  @apply px-6 py-2 bg-[#e5816f]
+         rounded-full text-white font-medium 
+         hover:bg-[#d6705f] transform hover:scale-105
+         transition-all duration-300 hover:shadow-lg;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite;
+}
+
+/* Enhanced form styling */
+input, select, textarea {
+  @apply transition-all duration-200;
+}
+
+button {
+  @apply transition-all duration-200;
+}
+
+/* Modal animations */
+.modal-enter {
+  @apply opacity-0 scale-95;
+}
+
+.modal-enter-active {
+  @apply opacity-100 scale-100 transition-all duration-300;
+}
+
+.modal-exit {
+  @apply opacity-100 scale-100;
+}
+
+.modal-exit-active {
+  @apply opacity-0 scale-95 transition-all duration-200;
+}

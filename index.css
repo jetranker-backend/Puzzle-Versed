@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#0D0D0D] text-white font-['Space_Grotesk'];
+}
+
+.neon-card {
+  @apply bg-[#1A1A2E]/50 rounded-xl p-6 
+         border border-[#B266FF]/20 hover:border-[#B266FF]/40 
+         transition-all duration-300;
+}
+
+.neon-button {
+  @apply px-6 py-2 bg-gradient-to-r from-[#B266FF] to-[#00FFC8]
+         rounded-full text-white font-medium 
+         hover:shadow-[0_0_20px_rgba(0,255,200,0.5)]
+         transition-all duration-300;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite;
+}
